@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Real-Time Data Client</title>
+</head>
+<body>
+<div id="data-display"></div>
+<script>
+const socket = new WebSocket('ws://localhost:5000'); // WebSocket server address
+socket.onmessage = function(event) {
+const dataDisplay = document.getElementById('data-display');
+dataDisplay.innerHTML = event.data;
+};
+</script>
+</body>
+</html>
