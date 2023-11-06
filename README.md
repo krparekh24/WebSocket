@@ -1,20 +1,51 @@
-Steps to create this solution:
+**Steps to create .NET Core project solution:**
 
-Server Component:
-1.	Create a .NET application in C# using either .NET Framework or .NET Core. You can choose a project type that you are comfortable with, such as a console app, Web API, or a graphical application.
-2.	Decide on your data source:
-•	If you want to use external data, consider making HTTP requests to the sample REST API provided in the task description (http://dev-sample-api.tsl-timing.com/) to retrieve real-time data.
-•	If you prefer to generate your own data, you can simulate data changes at regular intervals within the server component.
-3.	Implement a server that uses raw TCP/UDP sockets or WebSockets to establish connections with clients.
-4.	As the data changes, send updates to connected clients in real-time. For WebSockets, you can use a library like SignalR for easy real-time communication.
-Client Component:
-1.	Create a client application. You have the flexibility to choose the type of client application you are comfortable with:
-•	If you choose WinForms or WPF, create a desktop application that displays real-time data updates.
-•	If you prefer web development, you can create a web app using vanilla JS or a front-end framework like React or Vue.js.
-2.	Connect to the server using the appropriate protocol (TCP/UDP or WebSocket) and receive real-time data updates.
-3.	Display the data updates to the user in an appealing and understandable format. Be creative in how you present the data.
-Source Control:
-•	Initialize a Git repository for your project.
-•	Make regular commits and push them to your repository as you make progress. This allows the reviewers to see your development process.
+1.	Open Visual Studio.
+2.	Click "Create a new project."
+3.	In the "Create a new project" window:
+•	Search for "ASP.NET Core Web Application."
+•	Select it and click "Next."
+4.	In the "Configure your new project" window:
+•	Enter a name for your project.
+•	Choose a location for your project files.
+•	Click "Create."
+
+**Configure the Server Project**
+1.	In the "Create a new ASP.NET Core Web Application" dialog, select "ASP.NET Core 5.0" as the target framework.
+2.	Select the "ASP.NET Core Web Application" template.
+3.	Click "Create."
+4.	In the "Create a new ASP.NET Core web application" dialog:
+•	Choose the "Web Application" template.
+•	Ensure "Enable Docker Support" is unchecked.
+•	Click "Create."
+
+**Create the Server Code**
+1.	In the Solution Explorer, open the "Startup.cs" file. This is where you'll configure your server.
+2.	Inside the Configure method, configure WebSocket middleware to handle WebSocket connections. You can use the example provided earlier for the server component code.
+3.	Build and run the server project.
+   
+**Create the Client Project**
+1.	In Visual Studio, right-click on the solution in Solution Explorer.
+2.	Select "Add" -> "New Project."
+3.	Search for "ASP.NET Core Web Application."
+4.	Select it and click "Next."
+5.	In the "Configure your new project" window:
+•	Enter a name for your client project.
+•	Choose a location for your project files.
+•	Click "Create."
+
+ **Configure the Client Project**
+1.	In the "Create a new ASP.NET Core Web Application" dialog, select "ASP.NET Core 5.0" as the target framework.
+2.	Choose the "Web Application" template.
+3.	Click "Create."
+   
+ **Create the Client Code**
+1.	In the Solution Explorer, open the "Startup.cs" file for the client project.
+2.	Inside the Configure method, create a WebSocket client to connect to the server. You can use the example provided earlier for the client component code.
+3.	Create an HTML page with JavaScript to display data received from the server.
+   
+ **Run Both Projects**
+1.	Set multiple startup projects in Visual Studio. Right-click on the solution in Solution Explorer, choose "Set Startup Projects," and select "Multiple startup projects." Set both the server and client projects to "Start."
+2.	Build and run the solution.
 
 
